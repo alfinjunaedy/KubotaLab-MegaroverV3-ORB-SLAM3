@@ -78,7 +78,7 @@ On top of that, this project adds vision-based localization and mapping:
 |---|---|
 | **Vstone MegaRover Ver.3.0** | Differential-drive base, micro-ROS firmware (ESP32), serial @ 115200 |
 | **Intel RealSense D435** | RGB-D camera, 640×480 @ 30 Hz, aligned depth + point cloud |
-| **Onboard PC** | Ubuntu 22.04 x86_64 (e.g. NUC / laptop on the rover) |
+| **Onboard Mini PC** | Ubuntu 22.04 x86_64 (AMD Ryzen 7 Pro 6850H, 24GB RAM) |
 | USB cables | Base serial (`/dev/ttyUSB0`) + D435 (USB3) |
 
 ## System Architecture
