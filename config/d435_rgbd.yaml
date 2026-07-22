@@ -1,0 +1,73 @@
+%YAML:1.0
+
+#--------------------------------------------------------------------------------------------
+# ORB-SLAM3 RGB-D Configuration for Intel RealSense D435
+# Resolution: 640x480 @ 30 FPS
+# Calibration obtained from:
+# /camera/camera/color/camera_info
+#--------------------------------------------------------------------------------------------
+
+File.version: "1.0"
+
+#--------------------------------------------------------------------------------------------
+# Camera Parameters
+#--------------------------------------------------------------------------------------------
+
+Camera.type: "PinHole"
+
+Camera1.fx: 614.1144
+Camera1.fy: 614.0119
+Camera1.cx: 323.1165
+Camera1.cy: 249.4211
+
+Camera1.k1: 0.0
+Camera1.k2: 0.0
+Camera1.p1: 0.0
+Camera1.p2: 0.0
+Camera1.k3: 0.0
+
+Camera.width: 640
+Camera.height: 480
+Camera.fps: 30
+Camera.RGB: 1
+
+#--------------------------------------------------------------------------------------------
+# RGB-D Parameters
+#--------------------------------------------------------------------------------------------
+
+RGBD.DepthMapFactor: 1000.0
+
+# Maximum depth used by ORB-SLAM3 (meters)
+Stereo.ThDepth: 40.0
+
+# Not used in RGB-D mode, kept for compatibility
+Stereo.b: 0.05
+
+#--------------------------------------------------------------------------------------------
+# ORB Extractor
+#--------------------------------------------------------------------------------------------
+
+ORBextractor.nFeatures: 3000
+ORBextractor.scaleFactor: 1.2
+ORBextractor.nLevels: 8
+ORBextractor.iniThFAST: 20
+ORBextractor.minThFAST: 7
+
+#--------------------------------------------------------------------------------------------
+# Viewer
+#--------------------------------------------------------------------------------------------
+
+Viewer.KeyFrameSize: 0.05
+Viewer.KeyFrameLineWidth: 1.0
+Viewer.GraphLineWidth: 0.9
+Viewer.PointSize: 2.0
+Viewer.CameraSize: 0.08
+Viewer.CameraLineWidth: 3.0
+
+Viewer.ViewpointX: 0.0
+Viewer.ViewpointY: -0.7
+Viewer.ViewpointZ: -1.8
+Viewer.ViewpointF: 500.0
+
+# Disable Pangolin viewer
+Viewer.UseViewer: true
