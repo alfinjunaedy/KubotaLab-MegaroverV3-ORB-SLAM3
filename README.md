@@ -11,7 +11,7 @@
 
 A complete ROS 2 (Humble) stack that runs **ORB-SLAM3** on an Intel RealSense D435 (RGB-D)
 mounted on a **Vstone MegaRover Ver.3.0**. The visual SLAM pose (`/orb_pose`) is combined
-with the rover's odometry (micro-ROS base, `/rover_odo`) for robust indoor localization,
+with the rover's odometry (micro-ROS base, `/rover_odo`) for indoor localization,
 while a custom `map_builder` node accumulates the registered RGB-D point clouds into a
 global map visualized in RViz. One launch file brings up the entire system and records
 everything to rosbag (MCAP).
