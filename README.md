@@ -84,7 +84,7 @@ On top of that, this project adds vision-based localization and mapping:
 ## System Architecture
 
 **Software Configuration**
-![Software Configuration](imgs/software.jpg)
+![Software Configuration](imgs/software1.jpg)
 
 **ROS2 Configuration**
 ![ROS2 Configuration](imgs/ros2.jpg)
@@ -142,7 +142,7 @@ megarover-v3-orbslam3/
 ## Prerequisites
 
 - Ubuntu **22.04** (Jammy), x86_64
-- **ROS 2 Humble** (desktop install) — <https://docs.ros.org/en/humble/Installation.html>
+- **ROS 2 Humble** (desktop install)
 - `git`, `colcon`, `rosdep`
 - ~8 GB free disk space, ≥ 8 GB RAM recommended for building ORB-SLAM3
 
@@ -239,7 +239,7 @@ Clone the repo anywhere and run **`install.sh`** — it copies each package into
 correct workspace (and optionally builds them):
 
 ```bash
-git clone https://github.com/<your-username>/megarover-v3-orbslam3.git
+git clone https://github.com/alfinjunaedy/megarover-v3-orbslam3.git
 cd megarover-v3-orbslam3
 
 ./install.sh            # copy files only
