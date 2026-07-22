@@ -349,12 +349,12 @@ pkg-config --modversion pangolin
 grep -i pangolin_version ~/Pangolin/build/CMakeCache.txt
 ```
 
-**Recommendation:** use **Pangolin v0.6** with ORB-SLAM3. If you see Pangolin-related
+**Recommendation:** use **Pangolin v0.5** with ORB-SLAM3. If you see Pangolin-related
 compile errors (e.g. C++17/`register` keyword errors from Pangolin headers while building
 ORB-SLAM3), you are on a newer release — fix it with:
 
 ```bash
-cd ~/Pangolin && git checkout v0.6
+cd ~/Pangolin && git checkout v0.5
 rm -rf build && mkdir build && cd build
 cmake .. -DBUILD_EXAMPLES=OFF && make -j$(nproc) && sudo make install && sudo ldconfig
 ```
@@ -390,5 +390,5 @@ Apache-2.0 — you install those from their own repositories.
   this project is based on (`orbslam3` package, `ros2 run orbslam3 rgbd ...`)
 - [vstoneofficial/megarover3_ros2](https://github.com/vstoneofficial/megarover3_ros2) —
   MegaRover Ver.3.0 ROS 2 packages & micro-ROS setup (Vstone Co., Ltd.)
-- [micro-ROS](https://micro.ros.org/) — micro_ros_setup / micro_ros_agent
+- [micro-ROS](https://micro.vulcanexus.org/) — micro_ros_setup / micro_ros_agent
 - [Intel RealSense ROS wrapper](https://github.com/IntelRealSense/realsense-ros)
