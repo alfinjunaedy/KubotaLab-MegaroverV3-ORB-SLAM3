@@ -1,0 +1,27 @@
+# ROS 2 / colcon build artifacts
+build/
+install/
+log/
+
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+
+# Rosbags & recorded data
+rosbags/
+*.bag
+*.mcap
+*.db3
+
+# Generated maps / calibration artifacts
+*.pcd
+*.ply
+*.osa
+*.txt.tmp
+
+# Editor / OS
+.vscode/
+.idea/
+*.swp
+.DS_Store
