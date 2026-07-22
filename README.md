@@ -313,6 +313,50 @@ source ~/.bashrc
 4. Rosbags are written to `/home/robot/rosbags/<timestamp>/` — **edit the path in
    `rover_bringup_launch.py` if your username is not `robot`**.
 
+## Rover Motion Programming
+
+The rover's driving route is scripted directly in C++ — open
+`~/ros2_ws/src/rover_control/src/rover_controller.cpp` and look for the
+**`// Planner`** block. Commands execute **sequentially**, using wheel odometry
+(`/rover_odo`) with the ORB-SLAM3 pose (`/orb_pose`) available for feedback while
+the run is logged by the rosbag recorder.
+
+### Available motion commands
+
+| Command | Arguments | Action |
+|---|---|---|
+| `move_forward(dist, speed)` | `dist` [m], `speed` [m/s] | Drive straight forward |
+| `move_backward(dist, speed)` | `dist` [m], `speed` [m/s] | Drive straight backward |
+| `rotate_cw(deg, speed)` | `deg` [°], `speed` [°/s] | Rotate clockwise (turn right) in place |
+| `rotate_ccw(deg, speed)` | `deg` [°], `speed` [°/s] | Rotate counter-clockwise (turn left) in place |
+| `delay_seconds(s)` | `s` [s] | Pause between motions (lets the SLAM pose settle) |
+
+### Example — a mapped survey path
+
+```cpp
+// Planner ****************************************************************************************
+            move_forward(1, 0.2);
+            delay_seconds(1);
+            rotate_cw(45);
+// **************************************************************************************************
+```
+
+### Rebuild after editing
+
+```bash
+source /opt/ros/humble/setup.bash
+cd ~/ros2_ws
+colcon build --symlink-install --packages-select rover_control
+source install/setup.bash
+```
+
+Then relaunch — `rover_controller` starts 16 s into the bring-up sequence and
+executes your planner block immediately:
+
+```bash
+ros2 launch rover_control rover_bringup_launch.py
+```
+
 ## Topics
 
 | Topic | Type | Meaning |
