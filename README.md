@@ -84,7 +84,7 @@ On top of that, this project adds vision-based localization and mapping:
 ## System Architecture
 
 **Software Configuration**
-![Software Configuration](imgs/software1.jpg)
+![Software Configuration](imgs/software.jpg)
 
 **ROS2 Configuration**
 ![ROS2 Configuration](imgs/ros2.jpg)
