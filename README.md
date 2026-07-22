@@ -177,7 +177,7 @@ newer Pangolin releases (0.8/0.9) often fail (see
 sudo apt install -y libglew-dev libgl1-mesa-dev libegl1-mesa-dev \
                     wayland-protocols libwayland-dev libxkbcommon-dev
 git clone https://github.com/stevenlovegrove/Pangolin.git ~/Pangolin
-cd ~/Pangolin && git checkout v0.6
+cd ~/Pangolin && git checkout v0.5
 mkdir build && cd build
 cmake .. -DBUILD_EXAMPLES=OFF
 make -j$(nproc)
