@@ -83,23 +83,11 @@ On top of that, this project adds vision-based localization and mapping:
 
 ## System Architecture
 
-```mermaid
-flowchart LR
-    D435[RealSense D435] -->|USB3| RS[realsense2_camera]
-    BASE[MegaRover V3 base<br/>micro-ROS firmware] <-->|USB serial 115200| AGENT[micro_ros_agent]
+![Software Configuration]
+(imgs/software.jpg)
 
-    subgraph PC["ROS 2 Humble — onboard PC"]
-        RS -->|/camera/camera/color/image_raw<br/>/camera/camera/aligned_depth_to_color/image_raw| SLAM[orbslam3 rgbd<br/>ORB-SLAM3]
-        SLAM -->|/orb_pose| MB[map_builder]
-        RS -->|/camera/camera/depth/color/points| MB
-        MB -->|/global_cloud<br/>/robot_marker| RVIZ[RViz<br/>map_builder.rviz]
-        RVIZ -->|/goal_pose /initialpose| RC[rover_controller]
-        AGENT <-->|base sensors / cmd| RC
-        RC -->|/rover_odo /tf<br/>/rover_sensor /rover_twist| RVIZ
-        SLAM -->|/orb_pose| RC
-        BAG[rosbag2 — MCAP recorder] -.records all topics.- PC
-    end
-```
+![ROS2 Configuration]
+(imgs/ros2.jpg)
 
 ## Workspace Layout
 
