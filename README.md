@@ -168,12 +168,12 @@ sudo usermod -aG dialout $USER
 ### 1. ORB-SLAM3 → `~/ORB_SLAM3`
 
 ORB-SLAM3 is a plain CMake library (not a ROS package) and lives in your home
-directory. **Pangolin v0.6** is the version known to build cleanly with ORB-SLAM3 —
-newer Pangolin releases (0.8/0.9) often fail (see
+directory. **Pangolin v0.5/0.6** is the version known to build cleanly with ORB-SLAM3 —
+newer Pangolin releases often fail (see
 [Checking your Pangolin version](#checking-your-pangolin-version)).
 
 ```bash
-# --- Pangolin v0.6 (visualization dependency of ORB-SLAM3) ---
+# --- Pangolin v0.5 (visualization dependency of ORB-SLAM3) ---
 sudo apt install -y libglew-dev libgl1-mesa-dev libegl1-mesa-dev \
                     wayland-protocols libwayland-dev libxkbcommon-dev
 git clone https://github.com/stevenlovegrove/Pangolin.git ~/Pangolin
@@ -364,7 +364,7 @@ cmake .. -DBUILD_EXAMPLES=OFF && make -j$(nproc) && sudo make install && sudo ld
 | Symptom | Fix |
 |---|---|
 | `ORBvoc.txt` not found / SLAM exits immediately | Extract the vocabulary: `cd ~/ORB_SLAM3/Vocabulary && tar -xf ORBvoc.txt.tar.gz` |
-| Pangolin header errors while building ORB-SLAM3 | Downgrade to Pangolin v0.6 (see above), or build ORB-SLAM3 with C++17 |
+| Pangolin header errors while building ORB-SLAM3 | Downgrade to Pangolin v0.5 (see above), or build ORB-SLAM3 with C++17 |
 | `colcon build` of `orbslam3` fails to find ORB-SLAM3 | Fix the ORB-SLAM3 path in `ORB_SLAM3_ROS2/CMakeLists.txt` (expects `~/ORB_SLAM3`) |
 | Build killed on low-RAM machine | `MAKEFLAGS="-j2" colcon build` / edit ORB-SLAM3 `build.sh` from `-j` to `-j2` |
 | `serial: /dev/ttyUSB0: Permission denied` | `sudo usermod -aG dialout $USER`, re-login (or replug USB) |
