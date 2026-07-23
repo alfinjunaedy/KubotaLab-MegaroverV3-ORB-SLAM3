@@ -103,7 +103,7 @@ def generate_launch_description():
             '''
             ros2 bag record \
             --storage mcap \
-            -o /home/robot/rosbags/$(date +%Y%m%d_%H%M%S) \
+            -o /home/$USER/rosbags/$(date +%Y%m%d_%H%M%S) \
             /camera/camera/aligned_depth_to_color/image_raw \
             /camera/camera/color/image_raw \
             /camera/camera/depth/color/points \
