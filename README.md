@@ -1,4 +1,4 @@
-# megarover-v3-orbslam3
+# Megarover V3 ORB-SLAM3
 
 **Indoor localization & mapping with a Vstone MegaRover V3 using ORB-SLAM3 (RGB-D) fused with the rover's wheel odometry.**
 
